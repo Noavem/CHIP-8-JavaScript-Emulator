@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIP-8</title>
+    <link rel="stylesheet" href="system.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <ul role="menu-bar">
+        <li role="menu-item" tabindex="0" aria-haspopup="false" id="load-rom-link">Load Rom</li>
+        <input type="file" id="rom-upload" style="display: none;" accept=".ch8">
+        <li id="separate" role="menu-item" tabindex="0" aria-haspopup="false"><a target="_blank"
+                href="https://github.com/sakofchit/system.css">GitHub</a></li>
+        <li role="menu-item" tabindex="0" aria-haspopup="false"><a target="_blank"
+                href="https://noavermeers.ch">noavermeers.ch</a></li>
+    </ul>
+
+    <div id="flex-container">
+        <div class="window">
+            <div class="title-bar">
+                <h1 class="title">CHIP-8</h1>
+            </div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="window-pane">
+                <canvas id="chip8-display" width="64" height="32"></canvas>
+            </div>
+        </div>
+
+        <div class="window">
+            <div class="title-bar">
+                <h1 class="title">Internals</h1>
+            </div>
+            <div class="separator"></div>
+
+            <div class="window-pane">
+                <div id="internals">
+                    <div>
+                        <strong>Registers:</strong>
+                        <div id="registers"></div>
+                    </div>
+                    <div>
+                        <strong>Program Counter:</strong> <span id="pc">0x200</span>
+                    </div>
+                    <div>
+                        <strong>Instruction:</strong> <span id="instruction">0x0000</span>
+                    </div>
+                    <div>
+                        <strong>Index Register (I):</strong> <span id="i-reg">0x0000</span>
+                    </div>
+                    <div>
+                        <strong>Stack Pointer:</strong> <span id="sp">0</span>
+                    </div>
+                    <div>
+                        <strong>Timers:</strong>
+                        <div id="timers">
+                            Delay: <span id="delay-timer">0</span> | Sound: <span id="sound-timer">0</span>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Memory:</strong>
+                        <div id="memory">
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Settings:</strong>
+                        <div id="chip8-settings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="scaling.js"></script>
+<script type="module" src="chip-8/config.js"></script>
+<script type="module" src="chip-8/main.js"></script>

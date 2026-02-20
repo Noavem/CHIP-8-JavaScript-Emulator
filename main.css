@@ -1,0 +1,100 @@
+body {
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+li {
+    font-size: 1.2rem;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1320px) {
+    #flex-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+.window {
+    margin: 0;
+    min-width: 30%;
+    max-width: 100%;
+}
+
+.window:first-of-type {
+    flex-grow: 1;
+}
+
+.window-pane {
+    overflow-y: hidden;
+}
+
+/* Internals */
+#internals>div {
+    margin-bottom: 12px;
+}
+
+#internals span {
+    font-family: monospace;
+}
+
+#registers,
+#timers,
+#chip8-settings,
+#memory {
+    font-family: monospace;
+    margin-top: 4px;
+}
+
+#registers,
+#timers,
+#chip8-settings {
+    font-size: 0.9em;
+}
+
+#memory {
+    font-size: 0.75em;
+    overflow-y: auto;
+    max-height: 200px;
+    border: 1px inset;
+    padding: 4px;
+    white-space: pre;
+}
+
+/* Menu */
+ul[role] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li>a[href] {
+    text-decoration: underline;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#separate {
+    margin-left: auto;
+}
+
+/* Display */
+#chip8-display {
+    background-color: #000;
+    margin: auto;
+    display: block;
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
